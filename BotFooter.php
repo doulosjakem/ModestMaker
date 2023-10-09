@@ -1,34 +1,39 @@
-<footer>
-    <div class="PPgreen  text-center mb-0">
+<footer class="mb-0">
+    <div class="text-center mb-0 MMblue border-top border-black border-5">
         <div class="py-2">
             <a href="./index.php">
-                <img class="rounded img-fluid my-2" src="images/paisanos-place-icon.jpg"
-                    alt="chef in front of italian flag">
+                <img style="height: 400px;" class="mh-100 rounded img-fluid my-2" src="favicon/android-chrome-512x512.png"
+                    alt="ModestMaker Logo">
             </a>
         </div>
         <div class="">
             <div class="col">
-                <a class="PPbluetxt text-decoration-none">
-                    <h4 class="fs-6">All images from img2go's free ai art generator https://www.img2go.com/ai-art-generator</h4>
+                <a href="https://www.img2go.com/ai-art-generator" class="MMtantxt text-decoration-none">
+                    <h4 class="fs-6">All item images from img2go's ai art generator</h4>
                 </a>
             </div>
             <div class="col">
-                <a href="tel:000-000-0000" class="PPbluetxt text-decoration-none">
+                <a href="tel:000-000-0000" class="MMtantxt text-decoration-none">
                     <h4 class="fs-6">Phone: (000)-000-0000</h4>
                 </a>
             </div>
             <div class="col">
-                <a href="mailto:PaisanosPlace@gmail.com" class="PPbluetxt text-decoration-none">
-                    <h4 class="fs-6">Email: PaisanosPlace@gmail.com</h4>
+                <a href="mailto:ModestMaker@gmail.com" class="MMtantxt text-decoration-none">
+                    <h4 class="fs-6">Email: ModestMaker@gmail.com</h4>
                 </a>
             </div>
             <div class="col">
-                <a href="./location.php" class="PPbluetxt text-decoration-none">
-                    <h4 class="fs-6">Address: 300 N. South St. Boise, ID</h4>
+                <a href="./location.php" class="MMtantxt text-decoration-none">
+                    <h4 class="fs-6">Address: 1289 N Meridian Rd. Meridian ID 83646</h4>
+                </a>
+            </div>
+            <div class="col">
+                <a href="./admin.php" class="MMtantxt text-decoration-none">
+                    <h4 class="fs-6">Admin Page to view users</h4>
                 </a>
             </div>
         </div>
-        <p class="PPblacktxt">&copy
+        <p class="">&copy
             <?php echo date("Y"); ?> ModestMaker inc. All Rights Reserved.
         </p>
     </div>

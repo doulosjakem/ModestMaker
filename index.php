@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html class="m-0 p-0">
 
 <head>
     <?php include "HeadLinks.php" ?>
     <title>ModestMaker Craftstore</title>
 </head>
 
-<body>
+<body class="m-0 p-0">
     <?php include "TopNav.php" ?>
 
-    <!-- ADVERTISEMENT -->
+    <?php include "Store.php" ?>
+    <h2>STORE PROTOTYPE BELOW</h2>
+    <?php include "storeproto.php" ?>
+
+    
+    <?php include "BotFooter.php" ?>
+</body>
+
+</html>
+
+<!-- ADVERTISEMENT
     <div class="container-fluid PPtan text-center border-bottom border-danger border-5">
         <a href="menu.php" class="text-decoration-none PPblacktxt">
             <div class="row py-2">
@@ -67,7 +77,7 @@
         </div>
     </div>
 
-    <!-- About and Location -->
+    About and Location 
     <div class="container-fluid PPwhite text-center border-bottom border-danger border-5">
         <div class="row py-4">
             <div class="col border-end border-black border-2">
@@ -88,9 +98,4 @@
                 </a>
             </div>
         </div>
-    </div>
-
-    <?php include "BotFooter.php" ?>
-</body>
-
-</html>
+    </div> -->
