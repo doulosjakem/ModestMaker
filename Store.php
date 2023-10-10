@@ -36,13 +36,13 @@
     } 
 </style> 
 <div class="container-fluid px-2 MMbrown">
-    <div class="row py-2 g-2">
+    <div class="row py-5 g-2">
         <?php 
                if(!empty($products)) 
                foreach($products as $product) 
               {  
             ?> 
-            <div class="card col-lg-3 col-md-4 col-sm-6 col-12 
+            <div class="card col-lg-3 col-md-4 col-sm-6 col-12 p-3
             <?php if ($product['ProductID'] % 2 == 0){
                 echo 'MMdbrowntxt MMtan';
             } else {
@@ -55,10 +55,10 @@
                     <h5 class="card-title text-center"><?php echo $product['Name'];?></h5>
                     <p class="card-text"><?php echo $product['Description']; ?></p>
                 </div>
-                <ul class="list-group list-group-flush MMwhite">
+                <ul class="list-group list-group-flush MMwhite rounded">
                     <li class="list-group-item text-center MMwhite">$<?php echo $product['Price']; ?>.00</li>
                 </ul>
-                <div class="card-body text-center MMblue">
+                <div class="card-body text-center MMblue rounded">
                     <button onclick="" class="card-link btn btn-dark">Add to Cart</button>
                 </div>
             </div>
