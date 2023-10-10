@@ -13,6 +13,10 @@
         </button>
         <div class="collapse navbar-collapse " id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                    <a class="MMtantxt nav-link text-end rounded px-3 m-1"
+                        href="./index.php" role="button">Home</a>
+                </li> 
                 <li class="nav-item">
                     <a class="MMtantxt nav-link text-end rounded px-3 m-1"data-bs-toggle="modal"
                         href="./signin.php" role="button">Sign In</a>

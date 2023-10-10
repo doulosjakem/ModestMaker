@@ -27,14 +27,6 @@
 ?> 
 
 <!DOCTYPE html>
-<style> 
-    td,th { 
-        border: 1px solid black; 
-        padding: 10px; 
-        margin: 5px; 
-        text-align: center; 
-    } 
-</style> 
 <div class="container-fluid px-2 MMbrown">
     <div class="row py-5 g-2">
         <?php 

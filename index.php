@@ -12,7 +12,7 @@
 <body class="m-0 p-0">
     <?php include "TopNav.php" ?>
 
-    <?php if (false)
+    <?php if (true)
     { 
     include "LoginReminder.php";
     } else {
@@ -22,7 +22,6 @@
     
     <?php include "BotFooter.php" ?>
 </body>
-
 </html>
 
 <!-- ADVERTISEMENT
