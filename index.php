@@ -1,3 +1,6 @@
+<?php 
+
+?>
 <!DOCTYPE html>
 <html class="m-0 p-0">
 
@@ -9,10 +12,13 @@
 <body class="m-0 p-0">
     <?php include "TopNav.php" ?>
 
-    <?php include "Store.php" ?>
-    <h2>STORE PROTOTYPE BELOW</h2>
-    <?php include "storeproto.php" ?>
-
+    <?php if (true)
+    { 
+    include "LoginReminder.php";
+    } else {
+    include "Store.php";
+    }
+     ?>
     
     <?php include "BotFooter.php" ?>
 </body>

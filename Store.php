@@ -55,12 +55,11 @@
                     <h5 class="card-title text-center"><?php echo $product['Name'];?></h5>
                     <p class="card-text"><?php echo $product['Description']; ?></p>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item text-center">$<?php echo $product['Price']; ?>.00</li>
+                <ul class="list-group list-group-flush MMwhite">
+                    <li class="list-group-item text-center MMwhite">$<?php echo $product['Price']; ?>.00</li>
                 </ul>
-                <div class="card-body text-center">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                <div class="card-body text-center MMblue">
+                    <button onclick="" class="card-link btn btn-dark">Add to Cart</button>
                 </div>
             </div>
   
