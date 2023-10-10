@@ -29,12 +29,7 @@
 <!DOCTYPE html>
 
 <style> 
-    td,th { 
-        border: 1px solid black; 
-        padding: 10px; 
-        margin: 5px; 
-        text-align: center; 
-    } 
+    
 </style> 
 <head>
     <?php include "HeadLinks.php" ?>
@@ -44,7 +39,7 @@
 <body>
     <?php include "TopNav.php" ?>
     
-    <table> 
+    <table class="table table-bordered table-striped table-dark"> 
         <thead> 
             <tr> 
                 <th>UserID</th> 
