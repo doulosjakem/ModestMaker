@@ -29,7 +29,8 @@
 <div class="position-relative">
     
     <div class="container-fluid px-2 MMbrown">
-        <div class="row py-5 g-2">
+        <h2 class="text-center MMtantxt py-3">You're only browsing, <button id="loginBtn" class="btn btn-light">Login</button> for full access.</h2>
+        <div class="row pb-5 g-2">
             <?php 
                 if(!empty($products)) 
                 foreach($products as $product) 
