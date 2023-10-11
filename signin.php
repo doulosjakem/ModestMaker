@@ -7,6 +7,9 @@
                 <div class="rounded px-2 py-3 MMtan">
                     <form id="loginForm" action="./index.php" method="post"  class="pb-2">
                         <h2 class="text-center MMdbrowntxt">Login</h2>
+                        <?php if (!$validLogin) { ?>
+                        <h4 class="text-danger text-center">Invalid Username or Password</h4>
+                        <?php } ?>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="username">Username</span>
                             <input type="text" class="form-control" name="username" placeholder="Username" aria-label="Username" aria-describedby="username">
@@ -23,7 +26,7 @@
                     <h2 class="text-center MMdbrowntxt ">OR</h2>
                     <hr>
 
-                    <form id="signUpForm" action="./index.php" method="post">
+                    <form id="signUpForm" action="./SignUp.php" method="post">
                         <h2 class="text-center MMdbrowntxt">Sign Up</h2>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="username">Username</span>

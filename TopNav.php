@@ -17,10 +17,12 @@
                     <a class="MMtantxt nav-link text-end rounded px-3 m-1"
                         href="./index.php" role="button">Home</a>
                 </li> 
-                <?php if (false) { ?>
+                <?php if ($userLoggedIn) { ?>
                 <li class="nav-item">
+                    
                     <a class="MMtantxt nav-link text-end rounded px-3 m-1"
-                        href="./index.php#signIn" id="navSignin" role="button">Logout <?php echo $userFirstName; ?></a>
+                        id="navLogOut" href="./logout.php" role="button">Logout <?php echo $username; ?></a>
+                    
                 </li>                
                 <li class="nav-item">
                     <a class="MMtantxt nav-link text-end rounded px-3 m-1" href="./cart.php">Cart</a>

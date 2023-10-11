@@ -1,6 +1,5 @@
 <?php 
-$username = 
-
+include "IndexLogic.php";
 ?>
 <!DOCTYPE html>
 <html class="m-0 p-0">
@@ -13,7 +12,7 @@ $username =
 <body class="m-0 p-0">
     <?php include "TopNav.php" ?>
     
-    <?php if (true)
+    <?php if (!$userLoggedIn)
     { 
     include "LoginReminder.php";
     } else {

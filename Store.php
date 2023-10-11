@@ -3,11 +3,11 @@
 
    $servername = "localhost"; 
    $serverUsername = "root"; 
-   $password = ""; 
+   $serverPassword = ""; 
    $dbname = "modestmaker"; 
      
    // connect the database with the server 
-   $conn = new mysqli($servername,$serverUsername,$password,$dbname); 
+   $conn = new mysqli($servername,$serverUsername,$serverPassword,$dbname); 
      
     // if error occurs  
     if ($conn -> connect_errno) 
