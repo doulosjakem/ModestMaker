@@ -60,13 +60,7 @@
         </div>
     </div>
     
-    <div class="MMpurple opacity-75 p-5 w-100 h-100 position-absolute top-50 start-50 translate-middle ">
-        <div class="rounded text-center MMdblue py-5 MMwhitetxt position-relative top-50 start-50 translate-middle h-100">
-            <h2 class="py-5">You'll need to first <a href="./signin.php" class="btn btn-light">Sign In</a> to be able to access the store
-            </h2>
-           
-        </div>
-    </div>
+    <?php include("signin.php"); ?>
 </div>
 
   

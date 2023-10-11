@@ -26,7 +26,6 @@
     }    
 ?> 
 
-<!DOCTYPE html>
 <div class="container-fluid px-2 MMbrown">
     <div class="row py-5 g-2">
         <?php 
