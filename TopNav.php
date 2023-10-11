@@ -17,13 +17,21 @@
                     <a class="MMtantxt nav-link text-end rounded px-3 m-1"
                         href="./index.php" role="button">Home</a>
                 </li> 
+                <?php if (false) { ?>
                 <li class="nav-item">
                     <a class="MMtantxt nav-link text-end rounded px-3 m-1"
-                        href="./index.php#signIn" id="navSignin" role="button">Sign In</a>
+                        href="./index.php#signIn" id="navSignin" role="button">Logout <?php echo $userFirstName; ?></a>
                 </li>                
                 <li class="nav-item">
                     <a class="MMtantxt nav-link text-end rounded px-3 m-1" href="./cart.php">Cart</a>
                 </li>
+                <?php } else { ?>
+                    <li class="nav-item">
+                    <a class="MMtantxt nav-link text-end rounded px-3 m-1"
+                        href="./index.php#signIn" id="navSignin" role="button">Sign In</a>
+                </li>                
+                <?php } ?>
+
             </ul>
         </div>
     </div>

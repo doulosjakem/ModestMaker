@@ -1,11 +1,11 @@
 <?php 
    $servername = "localhost"; 
-   $username = "root"; 
+   $serverUsername = "root"; 
    $password = ""; 
    $dbname = "modestmaker"; 
      
    // connect the database with the server 
-   $conn = new mysqli($servername,$username,$password,$dbname); 
+   $conn = new mysqli($servername,$serverUsername,$password,$dbname); 
      
     // if error occurs  
     if ($conn -> connect_errno) 
@@ -14,15 +14,25 @@
        exit(); 
     } 
   
-    $sql = "select * from users"; 
-    $result = ($conn->query($sql)); 
+    $sqlUsers = "select * from users"; 
+    $result = ($conn->query($sqlUsers)); 
     //declare array to store the data of database 
-    $row = [];  
+    $users = [];  
   
     if ($result->num_rows > 0)  
     { 
         // fetch all data from db into array  
-        $row = $result->fetch_all(MYSQLI_ASSOC)   ;
+        $users = $result->fetch_all(MYSQLI_ASSOC)   ;
+    }    
+    $sqlSession = "select * from session"; 
+    $result = ($conn->query($sqlSession)); 
+    //declare array to store the data of database 
+    $sessions = [];  
+  
+    if ($result->num_rows > 0)  
+    { 
+        // fetch all data from db into array  
+        $sessions = $result->fetch_all(MYSQLI_ASSOC)   ;
     }    
 ?> 
 
@@ -40,6 +50,7 @@
     <?php include "TopNav.php" ?>
     
     <table class="table table-bordered table-striped table-dark"> 
+        <h2 class="text-center">Users</h2>
         <thead> 
             <tr> 
                 <th>UserID</th> 
@@ -52,17 +63,42 @@
         </thead> 
         <tbody> 
             <?php 
-               if(!empty($row)) 
-               foreach($row as $rows) 
+               if(!empty($users)) 
+               foreach($users as $user) 
               {  
             ?> 
             <tr>   
-                <td><?php echo $rows['UserID']; ?></td> 
-                <td><?php echo $rows['Username']; ?></td> 
-                <td><?php echo $rows['Password']; ?></td>                 
-                <td><?php echo $rows['Email']; ?></td>                                
-                <td><?php echo $rows['Firstname']; ?></td>                                          
-                <td><?php echo $rows['Lastname']; ?></td>   
+                <td><?php echo $user['UserID']; ?></td> 
+                <td><?php echo $user['Username']; ?></td> 
+                <td><?php echo $user['Password']; ?></td>                 
+                <td><?php echo $user['Email']; ?></td>                                
+                <td><?php echo $user['Firstname']; ?></td>                                          
+                <td><?php echo $user['Lastname']; ?></td>   
+            </tr> 
+            <?php } ?> 
+        </tbody> 
+    </table>     
+    <table class="table table-bordered table-striped table-dark"> 
+    <h2 class="text-center">Sessions</h2>
+        <thead> 
+            <tr> 
+                <th>SessionId</th> 
+                <th>UserID</th> 
+                <th>Total</th>
+                <th>Created</th>
+            </tr> 
+        </thead> 
+        <tbody> 
+            <?php 
+               if(!empty($sessions)) 
+               foreach($sessions as $session) 
+              {  
+            ?> 
+            <tr>   
+                <td><?php echo $session['SessionID']; ?></td> 
+                <td><?php echo $session['UserID']; ?></td> 
+                <td><?php echo $session['Total']; ?></td>                 
+                <td><?php echo $session['created']; ?></td>    
             </tr> 
             <?php } ?> 
         </tbody> 
