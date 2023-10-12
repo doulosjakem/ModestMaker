@@ -52,8 +52,8 @@
                     <li class="list-group-item text-center MMwhite">$<?php echo $product['Price']; ?>.00</li>
                 </ul>
                 <div class="card-body text-center MMblue rounded">
-                    <form action="./addToCart.php" method="POST">
-                        <input type="text" name="ProductID" hidden><?php echo $product['ProductID']?></input>
+                    <form action="./AddToCart.php" method="POST">
+                        <input type="text" name="ProductID" value="<?php echo $product['ProductID']?>" hidden></input>
                     <button type="submit" class="card-link btn btn-dark">Add to Cart</button>
                     </form>
                 </div>

@@ -7,7 +7,8 @@
                 <div class="rounded px-2 py-3 MMtan">
                     <form id="loginForm" action="./index.php" method="post"  class="pb-2">
                         <h2 class="text-center MMdbrowntxt">Login</h2>
-                        <?php if (!$validLogin) { ?>
+                        <?php                         
+                        if (!$validLogin) { ?>
                         <h4 class="text-danger text-center">Invalid Username or Password</h4>
                         <?php } ?>
                         <div class="input-group mb-3">
@@ -53,11 +54,9 @@
                     <hr>
                     <h2 class="text-center MMdbrowntxt ">OR</h2>
                     <hr>
-                    <form id="browseForm">
                     <div class="text-center py-4">
-                            <button type="submit" class="mx-auto btn btn-dark">Browse Anyways</button>
+                            <button type="submit" id="browseButton" class="mx-auto btn btn-dark">Browse Anyways</button>
                         </div>
-                    </form>
 
                 </div>
             </div>        

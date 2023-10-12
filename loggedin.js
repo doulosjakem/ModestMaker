@@ -1,6 +1,6 @@
 var loggedIn = false;
 $(document).ready(function(){
-    $("#browseForm").submit(function(){
+    $("#browseButton").click(function(){
       $("#signIn").hide();
     });
     $("#loginBtn").click(function(){

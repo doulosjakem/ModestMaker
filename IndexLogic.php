@@ -6,6 +6,7 @@ $serverUsername = "root";
 $serverPassword = ""; 
 $dbname = "modestmaker"; 
 $userID = null;
+$validLogin = true;
   
 // connect the database with the server 
 $conn = new mysqli($servername,$serverUsername,$serverPassword,$dbname); 
@@ -19,6 +20,7 @@ $conn = new mysqli($servername,$serverUsername,$serverPassword,$dbname);
 
 //LOGIN AND PAGE LOGIC
 $userLoggedIn = false;
+$_SESSION['userLoggedIn'] = false;
 
 //Check for post, store data as session
 if (array_key_exists('username', $_POST) && array_key_exists('password', $_POST)) {
@@ -33,7 +35,8 @@ $userData = [];
     { 
         // fetch all data from db into array  
         $userData = $result->fetch_row()   ;       
-        $userLoggedIn = true;
+        $userLoggedIn = true;        
+        $_SESSION['userLoggedIn'] = true;
         $validLogin = true;
         //echo $userData[0].$userData[1].$userData[2];
         $_SESSION["userID"] = $userData[0];
@@ -48,14 +51,15 @@ $userData = [];
     $userID = $_SESSION["userID"];
     $username = $_SESSION["username"];
     $password = $_SESSION["password"];           
-    $userLoggedIn = true;
+    $userLoggedIn = true;    
+    $_SESSION['userLoggedIn'] = true;
     $validLogin = true;
     //echo "Made it through SESSION check";
 
     //failed to login.
 } else {
-    $userLoggedIn = false;    
-    $validLogin = false;
+    $userLoggedIn = false;   
+    $_SESSION['userLoggedIn'] = false;
     //echo "Made it to else check";
 }
 
@@ -75,7 +79,7 @@ $sessionData = [];
         $sessionData = $result->fetch_row();  
         $cartID = $sessionData[0];          
         $_SESSION['cartID'] = $cartID;
-        echo 'Existing ID: '.$cartID  ;
+        //echo 'Existing ID: '.$cartID  ;
     } 
     //otherwise create a session
     else {
@@ -87,7 +91,7 @@ $sessionData = [];
         $sessionData = $result->fetch_row(); 
         $cartID = $sessionData[0];
         $_SESSION['cartID'] = $cartID;
-        echo 'Created this ID: '.$cartID;
+        //echo 'Created this ID: '.$cartID;
     }
 } 
 

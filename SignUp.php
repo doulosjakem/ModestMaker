@@ -43,13 +43,13 @@ if (array_key_exists('username', $_POST) && array_key_exists('password', $_POST)
             $userID = $userData[0];
             $_SESSION["username"] = $userData[1];
             $_SESSION["password"] = $userData[2]; 
-            echo "-----1: ". $userData[0] ." 2:". $userData[1]. $userData[2]. $userData[3]. $userData[4]. $userData[5];
+            //echo "-----1: ". $userData[0] ." 2:". $userData[1]. $userData[2]. $userData[3]. $userData[4]. $userData[5];
         }
 } 
 else {
     $userLoggedIn = false;
 }
 
-//header("Location: ./index.php");
+header("Location: ./index.php");
 ?>
 <a href="./index.php">Back Home</a>
