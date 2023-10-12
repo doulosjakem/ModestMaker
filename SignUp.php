@@ -34,7 +34,6 @@ if (array_key_exists('username', $_POST) && array_key_exists('password', $_POST)
     $result = ($conn->query($sql)); 
     //declare array to store the data of database 
     $userData = [];  
-    echo "I'm gonna try it!";
         if ($result->num_rows > 0)  
         { 
             echo "I'm inside";
@@ -46,7 +45,6 @@ if (array_key_exists('username', $_POST) && array_key_exists('password', $_POST)
             $_SESSION["password"] = $userData[2]; 
             echo "-----1: ". $userData[0] ." 2:". $userData[1]. $userData[2]. $userData[3]. $userData[4]. $userData[5];
         }
-        echo "I made it out";
 } 
 else {
     $userLoggedIn = false;

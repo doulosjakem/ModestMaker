@@ -62,20 +62,19 @@ $userData = [];
 
 // -----------------SESSION ----------------------
 
-echo "I MADE IT!";
 if (!is_null($userID)){
 $sqlSessSelect = "select * from session where UserID = \"$userID\"" ; 
 $result = ($conn->query($sqlSessSelect)); 
 //declare array to store the data of database 
 $sessionData = [];  
-echo "I MADE IT!";
 
 //check if there is an existing session
     if ($result->num_rows > 0)  
     { 
         // fetch all data from db into array  
         $sessionData = $result->fetch_row();  
-        $cartID = $sessionData[0];  
+        $cartID = $sessionData[0];          
+        $_SESSION['cartID'] = $cartID;
         echo 'Existing ID: '.$cartID  ;
     } 
     //otherwise create a session
@@ -87,6 +86,7 @@ echo "I MADE IT!";
         $sessionData = []; 
         $sessionData = $result->fetch_row(); 
         $cartID = $sessionData[0];
+        $_SESSION['cartID'] = $cartID;
         echo 'Created this ID: '.$cartID;
     }
 } 
