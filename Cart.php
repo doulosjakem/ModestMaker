@@ -56,6 +56,7 @@ if (array_key_exists('cartID', $_SESSION))
             }    
         }
     }
+
 }
     
 
@@ -73,45 +74,13 @@ if (array_key_exists('cartID', $_SESSION))
 <body class="m-0 p-0">
     <?php include "TopNav.php" ?>
     
-    <table class="table table-bordered table-striped table-dark text-center"> 
-        <h2 class="text-center"><?php echo $_SESSION['username']?>'s Cart</h2>
-        <thead> 
-            <tr> 
-                <th>Item Image</th>
-                <th>Product Name</th>
-                <th>Add more</th>
-                <th>Quantity</th>
-                <th>Decrease</th>
-                <th>CartItemID</th> 
-                <th>ProductID</th> 
-            </tr> 
-        </thead> 
-        <tbody> 
-            <?php 
-               $increment = 0;
-               if(!empty($cart)) 
-               foreach($cart as $item) 
-              {  
-            ?> 
-            <tr>   
-                <td><img src="./images/<?php echo $productNames[$increment]; ?>.jpg" style="max-width: 50px" class="img-fluid rounded">
-                </td>
-                <td><?php echo $productNames[$increment]; ?></td>  
-                <td>+</td>               
-                <td><?php echo $item['Quantity']; ?></td>   
-                <td>-</td>
-                <td><?php echo $item['CartItemID']; ?></td> 
-                <td><?php echo $item['ProductID']; ?></td> 
-            </tr> 
-            <?php $increment++;
-                } ?> 
-        </tbody> 
-    </table>  
-    
     <div class="container-fluid px-2 MMbrown">
         <h2 class="text-center MMwhitetxt pt-5"><?php echo $_SESSION['username']?>'s Cart</h2>
+        <?php if ($emptyCart) { ?>
+            <h3 class="text-center MMwhitetxt pt-5">Your Cart is Empty</h3><br>
+        <?php } else { ?>
         <div class="row py-5 g-2">
-        <?php 
+        <?php         
                 $increment = 0;
                 if(!empty($cart)) 
                 foreach($cart as $item) 
@@ -150,7 +119,27 @@ if (array_key_exists('cartID', $_SESSION))
                 <?php $increment++;
             } ?> 
         </div>
-    </div>
+        <hr>
+        <h2 class="text-center MMwhitetxt pt-5">SubTotal: $<?php echo $grandTotal; ?>.00</h2>
+        <h2 class="text-center MMwhitetxt pt-5">Tax: $<?php echo round(($grandTotal*$tax), 2); ?></h2>
+        <h2 class="text-center MMwhitetxt pt-5">Total: $<?php echo ($grandTotal + round(($grandTotal*$tax), 2)); ?></h2>
+        <br>
+            <div class="text-center">
+            <form action="purchase.php" method="POST">
+                <button type="submit" class="btn btn-primary">
+                Buy Now
+                </button>
+                </form>
+                <br>
+                <form action="clearCart.php" method="POST">
+                <button type="submit" class="btn btn-dark">
+                Clear Cart
+                </button>
+                </form>
+            </div>
+            <br>
+            <?php } ?>
+</div>
     
     <?php include "BotFooter.php" ?>
 </body>
