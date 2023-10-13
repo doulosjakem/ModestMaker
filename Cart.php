@@ -3,7 +3,7 @@ session_start();
 if (array_key_exists('cartID', $_SESSION))
 {
     $grandTotal = 0;
-    $tax = .6;
+    $tax = .06;
     $servername = "localhost"; 
     $serverUsername = "root"; 
     $serverPassword = ""; 
@@ -120,18 +120,20 @@ if (array_key_exists('cartID', $_SESSION))
             } ?> 
         </div>
         <hr>
-        <h2 class="text-center MMwhitetxt pt-5">SubTotal: $<?php echo $grandTotal; ?>.00</h2>
+        <h2 class="text-center MMwhitetxt pt-5">Subtotal: $<?php echo $grandTotal; ?>.00</h2>
         <h2 class="text-center MMwhitetxt pt-5">Tax: $<?php echo round(($grandTotal*$tax), 2); ?></h2>
-        <h2 class="text-center MMwhitetxt pt-5">Total: $<?php echo ($grandTotal + round(($grandTotal*$tax), 2)); ?></h2>
+        <h2 class="text-center MMwhitetxt pt-5">Total: $<?php echo round(($grandTotal + round(($grandTotal*$tax), 2)), 2); ?></h2>
         <br>
             <div class="text-center">
             <form action="purchase.php" method="POST">
+            <?php $_SESSION['cartArray'] = $cart; ?>
                 <button type="submit" class="btn btn-primary">
                 Buy Now
                 </button>
                 </form>
                 <br>
                 <form action="clearCart.php" method="POST">
+                    
                 <button type="submit" class="btn btn-dark">
                 Clear Cart
                 </button>
